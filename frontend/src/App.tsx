@@ -1,12 +1,23 @@
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DashboardLayout from "./layouts/DashboardLayout";
+import StudentsPage from "./pages/StudentsPage";
+import LocationsPage from "./pages/LocationsPage";
+import AccountingPage from "./pages/AccountingPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import DashboardHome from "./pages/DashboardHome";
 
-function App() {
-
+export default function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">✅ Tailwind is working!</h1>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route element={<DashboardLayout />}>
+          <Route path="/students" element={<StudentsPage />} />
+          <Route path="/locations" element={<LocationsPage />} />
+          <Route path="/accounting" element={<AccountingPage />} />
+        </Route>
+          <Route path="/dashboard" element={<DashboardHome />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App
