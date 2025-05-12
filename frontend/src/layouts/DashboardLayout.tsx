@@ -15,7 +15,7 @@ export default function DashboardLayout() {
         }`}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b border-[#6e59f7]">
-          <span className="text-xl font-bold">Acuafit</span>
+          <span className="px-4 text-xl font-bold">Acuafit</span>
           <button
             onClick={() => setIsOpen(false)}
             className="text-white lg:hidden"
@@ -26,28 +26,46 @@ export default function DashboardLayout() {
 
         <nav className="p-4 space-y-2 text-sm">
           <NavLink
-            to="/students"
+            to="/estudiantes"
             className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
           >
-            👥 Estudiantes
+            Estudiantes
           </NavLink>
           <NavLink
-            to="/locations"
+            to="/representantes"
             className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
           >
-            🏢 Sedes
+            Representantes
           </NavLink>
           <NavLink
-            to="/accounting"
+            to="/sedes"
             className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
           >
-            💰 Contabilidad
+            Sedes
+          </NavLink>
+          <NavLink
+            to="/horarios"
+            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
+          >
+            Horarios
+          </NavLink>
+          <NavLink
+            to="/pagos"
+            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
+          >
+          Pagos
+          </NavLink>
+          <NavLink
+            to="/contabilidad"
+            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
+          >
+          Contabilidad
           </NavLink>
         </nav>
 
         <div className="mt-auto p-4 border-t border-[#6e59f7]">
           <button className="w-full px-3 py-2 text-sm bg-[#6e59f7] hover:bg-[#4b3ca6] rounded">
-            🔒 Logout
+            Cerrar Sesión
           </button>
         </div>
       </aside>
@@ -61,7 +79,7 @@ export default function DashboardLayout() {
       )}
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col lg:ml-64">
+      <div className="flex-1 flex flex-col">
         {/* Top bar */}
         <header className="flex items-center justify-between px-6 py-4 bg-white shadow">
           <button
@@ -70,7 +88,7 @@ export default function DashboardLayout() {
           >
             ☰
           </button>
-          <div className="flex items-center space-x-4">
+          <div className="items-center space-x-4 contents">
             <span className="text-sm text-gray-700">Hola, Ibrahim</span>
             <img
               src="https://ui-avatars.com/api/?name=Ibrahim"
@@ -79,7 +97,6 @@ export default function DashboardLayout() {
             />
           </div>
         </header>
-
         <main className="p-6 overflow-y-auto">
           <Outlet />
         </main>
