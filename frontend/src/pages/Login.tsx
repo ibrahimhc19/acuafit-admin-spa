@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function Login() {
-  interface IFormInput {
-    email: string;
-    password: string;
-  }
+interface IFormInput {
+  email: string;
+  password: string;
+}
 
+export default function Login() {
   const navigate = useNavigate();
 
   const {
@@ -18,44 +18,48 @@ export default function Login() {
   } = useForm<IFormInput>();
 
   const [apiError, setApiError] = useState("");
+const submit = async (data: IFormInput) => {
+  setApiError("");
 
-  const submit = async (data: IFormInput) => {
-    setApiError("");
+  try {
+    const apiUrl = import.meta.env.VITE_APP_API_URL ?? "";
 
-    try {
-      const apiUrl = import.meta.env.VITE_APP_API_URL;
-      const response = await fetch(`${apiUrl}/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    // // 🔐 Paso previo obligatorio
+    // await fetch(`${apiUrl}sanctum/csrf-cookie`, {
+    //   credentials: "include",
+    // });
 
-      const responseData = await response.json();
+    const response = await fetch(`${apiUrl}api/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+      credentials: "include",
+    });
 
-      if (!response.ok) {
-        throw new Error(
-          responseData.message ||
-            `Error ${response.status}: ${response.statusText}`
-        );
-      }
-      // --- Éxito ---
-      // Guarda el token (considera alternativas más seguras si es necesario)
-      localStorage.setItem("authToken", responseData.token);
-      // console.log("Login exitoso:", responseData);
-      navigate("/dashboard", {
-        replace: true,
-      });
-    } catch (error:unknown) {
-      // Captura errores de red o los errores que lanzamos arriba
-      const errorMessage = 'Error al iniciar sesión. Inténtalo de nuevo.';
-      setApiError(
-        errorMessage
+    const responseData = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        responseData.message ||
+          `Error ${response.status}: ${response.statusText}`
       );
-      console.error("Error de login:", error);
     }
-  };
+
+    navigate("/dashboard", { replace: true });
+  } catch (error: unknown) {
+    let specificErrorMessage =
+      "Error al iniciar sesión. Inténtalo de nuevo.";
+    if (error instanceof Error) {
+      specificErrorMessage = error.message;
+    }
+    setApiError(specificErrorMessage);
+    console.error("Error de login:", error);
+  }
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#352c6f] to-[#6e59f7] p-4">
@@ -66,7 +70,12 @@ export default function Login() {
         </div>
 
         <form onSubmit={handleSubmit(submit)} className="space-y-4">
-            {apiError && <p style={{ color: 'red' }}>{apiError}</p>}
+          {apiError && (
+            <div className="bg-red-100 text-red-700 p-2 rounded-xl text-sm">
+              {"Error al iniciar sesión, intente nuevamente."}
+            </div>
+          )}
+
           <div>
             <label
               htmlFor="email"
@@ -81,8 +90,16 @@ export default function Login() {
               placeholder="ejemplo@correo.com"
               {...register("email", { required: "El email es obligatorio" })}
               aria-invalid={errors.email ? "true" : "false"}
+              aria-describedby="email-error"
             />
-            {errors.email && <p style={{ color: 'red', fontSize: '0.8em' }}>{errors.email.message}</p>}
+            {errors.email && (
+              <p
+                id="email-error"
+                className="text-red-600 text-sm mt-1"
+              >
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -97,24 +114,28 @@ export default function Login() {
               id="password"
               className="mt-1 w-full border border-gray-300 rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-[#6e59f7] text-gray-700"
               placeholder="••••••••"
-              {...register("password", { required: "La contraseña es obligatoria" })}
+              {...register("password", {
+                required: "La contraseña es obligatoria",
+              })}
+              aria-invalid={errors.password ? "true" : "false"}
+              aria-describedby="password-error"
             />
-            {errors.password && <p style={{ color: 'red', fontSize: '0.8em' }}>{errors.password.message}</p>}
+            {errors.password && (
+              <p
+                id="password-error"
+                className="text-red-600 text-sm mt-1"
+              >
+                {errors.password.message}
+              </p>
+            )}
           </div>
 
           <button
             type="submit"
-            className="w-full text-white rounded-xl py-2 transition-colors duration-300"
-            style={{ backgroundColor: "#6e59f7" }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor = "#352c6f")
-            }
-            onMouseOut={(e) =>
-              (e.currentTarget.style.backgroundColor = "#6e59f7")
-            }
+            className="w-full bg-[#6e59f7] hover:bg-[#352c6f] text-white rounded-xl py-2 transition-colors duration-300 disabled:opacity-50"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Iniciando sesión...' : 'Iniciar Sesión'}
+            {isSubmitting ? "Iniciando sesión..." : "Iniciar Sesión"}
           </button>
         </form>
 
