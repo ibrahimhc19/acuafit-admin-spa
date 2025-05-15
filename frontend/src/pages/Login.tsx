@@ -25,15 +25,15 @@ const submit = async (data: IFormInput) => {
     const apiUrl = import.meta.env.VITE_APP_API_URL ?? "";
 
     // // 🔐 Paso previo obligatorio
-    // await fetch(`${apiUrl}sanctum/csrf-cookie`, {
-    //   credentials: "include",
-    // });
+    await fetch(`${apiUrl}sanctum/csrf-cookie`, {
+      credentials: "include",
+    });
 
     const response = await fetch(`${apiUrl}api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        "Accept": "application/json",
       },
       body: JSON.stringify(data),
       credentials: "include",

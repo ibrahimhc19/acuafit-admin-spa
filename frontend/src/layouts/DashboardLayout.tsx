@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { useNavigate } from "react-router-dom"; // Asumiendo que usas React Router
+import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function DashboardLayout() {
@@ -8,68 +8,66 @@ export default function DashboardLayout() {
 
   const [apiError, setApiError] = useState<string>("");
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    fetch('http://localhost:8000/api/user', {
-      credentials: 'include'
-    })
-      .then(res => res.ok ? res.json() : null)
-      .then(setUser)
-      .catch(() => setUser(null));
-  }, []);
 
   const handleLogout = async () => {
-  setApiError("");
+    setApiError("");
 
-  try {
-    const apiUrl = import.meta.env.VITE_APP_API_URL ?? "";
+    try {
+      const apiUrl = import.meta.env.VITE_APP_API_URL ?? "";
 
-    // CSRF token first
-    await fetch(`${apiUrl}sanctum/csrf-cookie`, {
-      credentials: "include",
-    });
+      await fetch(`${apiUrl}sanctum/csrf-cookie`, {
+        credentials: "include",
+      });
+      const user = await fetch(`${apiUrl}api/user`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        credentials: "include",
+      });
 
-    const response = await fetch(`${apiUrl}api/logout`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    });
+      console.log(user);
 
-    let responseData = {};
-    const contentType = response.headers.get("content-type");
-    if (contentType && contentType.includes("application/json")) {
-      responseData = await response.json();
+      const response = await fetch(`${apiUrl}api/logout`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        credentials: "include",
+      });
+
+      let responseData = {};
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        responseData = await response.json();
+      }
+
+      if (!response.ok) {
+        const message =
+          (responseData as { message?: string })?.message ||
+          `Error ${response.status}: ${response.statusText}`;
+        throw new Error(message);
+      }
+
+      console.log("Logout exitoso");
+
+      navigate("/login", {
+        replace: true,
+      });
+    } catch (error: unknown) {
+      let specificErrorMessage = "Error al cerrar sesión. Inténtalo de nuevo.";
+
+      if (error instanceof Error) {
+        specificErrorMessage = error.message;
+      }
+
+      setApiError(specificErrorMessage);
+      console.error("Error de logout:", error);
     }
-
-    if (!response.ok) {
-      const message =
-        (responseData as { message?: string })?.message ||
-        `Error ${response.status}: ${response.statusText}`;
-      throw new Error(message);
-    }
-
-    console.log("Logout exitoso");
-
-    navigate("/login", {
-      replace: true,
-    });
-
-  } catch (error: unknown) {
-
-    let specificErrorMessage = "Error al cerrar sesión. Inténtalo de nuevo.";
-
-    if (error instanceof Error) {
-      specificErrorMessage = error.message;
-    }
-    
-    setApiError(specificErrorMessage);
-    console.error("Error de logout:", error);
-  }
-};
-
+  };
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -135,7 +133,7 @@ export default function DashboardLayout() {
           >
             Cerrar Sesión
           </button>
-        {apiError && (
+          {apiError && (
             <div className="w-full px-3 py-2 my-4 text-sm bg-[#6e59f7] rounded">
               {"Error al cerrar sesión, intente nuevamente."}
             </div>
