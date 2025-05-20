@@ -20,7 +20,7 @@ export default function StudentsPage() {
           </thead>
           <tbody className="text-gray-700">
             {/* Ejemplo de Fila 1 */}
-            <tr className="border-b border-gray-200 hover:bg-gray-100">
+            {/* <tr className="border-b border-gray-200 hover:bg-gray-100">
               <td className="py-3 px-4 text-xs sm:text-sm">1</td>
               <td className="py-3 px-4 text-xs sm:text-sm">Ana</td>
               <td className="py-3 px-4 text-xs sm:text-sm">Pérez</td>
@@ -31,9 +31,9 @@ export default function StudentsPage() {
               <td className="py-3 px-4 text-xs sm:text-sm hidden lg:table-cell">L-V 9am-5pm</td>
               <td className="py-3 px-4 text-xs sm:text-sm hidden md:table-cell">2025-01-15</td>
               <td className="py-3 px-4 text-xs sm:text-sm hidden md:table-cell">📄✏️🗑️</td>
-            </tr>
+            </tr> */}
             {/* Ejemplo de Fila 2 */}
-            <tr className="border-b border-gray-200 hover:bg-gray-100">
+            {/* <tr className="border-b border-gray-200 hover:bg-gray-100">
               <td className="py-3 px-4 text-xs sm:text-sm">2</td>
               <td className="py-3 px-4 text-xs sm:text-sm">Carlos</td>
               <td className="py-3 px-4 text-xs sm:text-sm">Gómez</td>
@@ -44,9 +44,9 @@ export default function StudentsPage() {
               <td className="py-3 px-4 text-xs sm:text-sm hidden lg:table-cell">L-V 8am-4pm</td>
               <td className="py-3 px-4 text-xs sm:text-sm hidden md:table-cell">2025-02-20</td>
               <td className="py-3 px-4 text-xs sm:text-sm hidden md:table-cell">📄✏️🗑️</td>
-            </tr>
+            </tr> */}
             {/* Ejemplo de Fila 3 */}
-            <tr className="border-b border-gray-200 hover:bg-gray-100">
+            {/* <tr className="border-b border-gray-200 hover:bg-gray-100">
               <td className="py-3 px-4 text-xs sm:text-sm">3</td>
               <td className="py-3 px-4 text-xs sm:text-sm">Luisa</td>
               <td className="py-3 px-4 text-xs sm:text-sm">Martínez</td>
@@ -57,10 +57,9 @@ export default function StudentsPage() {
               <td className="py-3 px-4 text-xs sm:text-sm hidden lg:table-cell">Sáb 9am-1pm</td>
               <td className="py-3 px-4 text-xs sm:text-sm hidden md:table-cell">2025-03-10</td>
               <td className="py-3 px-4 text-xs sm:text-sm hidden md:table-cell">📄✏️🗑️</td>
-
-            </tr>
-            {/* Ejemplo de Fila 4 */}
-            <tr className="hover:bg-gray-100"> {/* Última fila sin borde inferior si se desea */}
+            </tr> */}
+            {/* Ejemplo de Fila 4 */} {/* Última fila sin borde inferior si se desea */}
+            {/* <tr className="hover:bg-gray-100"> 
               <td className="py-3 px-4 text-xs sm:text-sm">4</td>
               <td className="py-3 px-4 text-xs sm:text-sm">Jorge</td>
               <td className="py-3 px-4 text-xs sm:text-sm">Rodríguez</td>
@@ -71,7 +70,7 @@ export default function StudentsPage() {
               <td className="py-3 px-4 text-xs sm:text-sm hidden lg:table-cell">L-V 10am-6pm</td>
               <td className="py-3 px-4 text-xs sm:text-sm hidden md:table-cell">2025-04-05</td>
               <td className="py-3 px-4 text-xs sm:text-sm hidden md:table-cell">📄✏️🗑️</td>
-            </tr>
+            </tr> */}
             {/* Puedes añadir más filas aquí */}
           </tbody>
         </table>
