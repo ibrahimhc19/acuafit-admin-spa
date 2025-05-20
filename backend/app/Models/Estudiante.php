@@ -87,18 +87,18 @@ class Estudiante extends Model
 
     // Aquí puedes definir relaciones con otros modelos si es necesario
     // Por ejemplo, si tienes modelos Representante, Sede, Horario:
-    // public function representante()
-    // {
-    //     return $this->belongsTo(Representante::class, 'representante_id');
-    // }
+    public function representante()
+    {
+        return $this->belongsTo(Representante::class, 'representante_id');
+    }
 
-    // public function sede()
-    // {
-    //     return $this->belongsTo(Sede::class, 'sede_id');
-    // }
+    public function sede()
+    {
+        return $this->belongsTo(Sede::class, 'sede_id');
+    }
 
-    // public function horario()
-    // {
-    //     return $this->belongsTo(Horario::class, 'horario_id');
-    // }
+    public function horario()
+    {
+        return $this->belongsTo(Horario::class, 'horario_id');
+    }
 }
