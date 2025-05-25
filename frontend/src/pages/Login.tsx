@@ -2,6 +2,9 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
+axios.defaults.withCredentials = true;
+axios.defaults.withXSRFToken = true;
 
 interface IFormInput {
   email: string;
@@ -18,48 +21,35 @@ export default function Login() {
   } = useForm<IFormInput>();
 
   const [apiError, setApiError] = useState("");
-const submit = async (data: IFormInput) => {
-  setApiError("");
+  const submit = async (data: IFormInput) => {
+    setApiError("");
 
-  try {
-    const apiUrl = import.meta.env.VITE_APP_API_URL ?? "";
+    try {
+      const apiUrl = import.meta.env.VITE_APP_API_URL ?? "";
 
-    // // 🔐 Paso previo obligatorio
-    await fetch(`${apiUrl}sanctum/csrf-cookie`, {
-      credentials: "include",
-    });
+      await axios.get(`${apiUrl}sanctum/csrf-cookie`, {});
 
-    const response = await fetch(`${apiUrl}api/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify(data),
-      credentials: "include",
-    });
+      const response = await axios.post(`${apiUrl}login`, data, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      console.log(response);
 
-    const responseData = await response.json();
+      navigate("/dashboard", { replace: true });
+    } catch (error: unknown) {
+      let specificErrorMessage = "Error al iniciar sesión. Inténtalo de nuevo.";
 
-    if (!response.ok) {
-      throw new Error(
-        responseData.message ||
-          `Error ${response.status}: ${response.statusText}`
-      );
+      if (axios.isAxiosError(error) && error.response) {
+        specificErrorMessage =
+          error.response.data.message ||
+          `Error ${error.response.status}: ${error.response.statusText}`;
+      }
+      setApiError(specificErrorMessage);
+
+      console.error("Error de login:", error);
     }
-
-    navigate("/dashboard", { replace: true });
-  } catch (error: unknown) {
-    let specificErrorMessage =
-      "Error al iniciar sesión. Inténtalo de nuevo.";
-    if (error instanceof Error) {
-      specificErrorMessage = error.message;
-    }
-    setApiError(specificErrorMessage);
-    console.error("Error de login:", error);
-  }
-};
-
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#352c6f] to-[#6e59f7] p-4">
@@ -93,10 +83,7 @@ const submit = async (data: IFormInput) => {
               aria-describedby="email-error"
             />
             {errors.email && (
-              <p
-                id="email-error"
-                className="text-red-600 text-sm mt-1"
-              >
+              <p id="email-error" className="text-red-600 text-sm mt-1">
                 {errors.email.message}
               </p>
             )}
@@ -121,10 +108,7 @@ const submit = async (data: IFormInput) => {
               aria-describedby="password-error"
             />
             {errors.password && (
-              <p
-                id="password-error"
-                className="text-red-600 text-sm mt-1"
-              >
+              <p id="password-error" className="text-red-600 text-sm mt-1">
                 {errors.password.message}
               </p>
             )}

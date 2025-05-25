@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+axios.defaults.withCredentials = true;
+axios.defaults.withXSRFToken = true;
+
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function DashboardLayout() {
@@ -9,6 +13,7 @@ export default function DashboardLayout() {
   const [apiError, setApiError] = useState<string>("");
   const navigate = useNavigate();
 
+  const usuario = "Ciudadano promedio";
 
   const handleLogout = async () => {
     setApiError("");
@@ -16,41 +21,39 @@ export default function DashboardLayout() {
     try {
       const apiUrl = import.meta.env.VITE_APP_API_URL ?? "";
 
-      await fetch(`${apiUrl}sanctum/csrf-cookie`, {
-        credentials: "include",
-      });
-      const user = await fetch(`${apiUrl}api/user`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        credentials: "include",
+      const user = await axios.get(`${apiUrl}user`, {
+        // withCredentials: true,
+        // withXSRFToken: true,
       });
 
       console.log(user);
+      // return user.data;
 
-      const response = await fetch(`${apiUrl}api/logout`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        credentials: "include",
+      await axios.get(`${apiUrl}sanctum/csrf-cookie`, {
+        // withCredentials: true,
       });
 
-      let responseData = {};
-      const contentType = response.headers.get("content-type");
-      if (contentType && contentType.includes("application/json")) {
-        responseData = await response.json();
-      }
+      const response = await axios.post(`${apiUrl}logout`, {
+        // withCredentials: true,
+        // withXSRFToken: true,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      console.log(response.data.message);
 
-      if (!response.ok) {
-        const message =
-          (responseData as { message?: string })?.message ||
-          `Error ${response.status}: ${response.statusText}`;
-        throw new Error(message);
-      }
+      // let responseData = {};
+      // const contentType = response.headers.get("content-type");
+      // if (contentType && contentType.includes("application/json")) {
+      //   responseData = await response.json();
+      // }
+
+      // if (!response.ok) {
+      //   const message =
+      //     (responseData as { message?: string })?.message ||
+      //     `Error ${response.status}: ${response.statusText}`;
+      //   throw new Error(message);
+      // }
 
       console.log("Logout exitoso");
 
@@ -160,9 +163,9 @@ export default function DashboardLayout() {
             ☰
           </button>
           <div className="items-center space-x-4 contents">
-            <span className="text-sm text-gray-700">Hola, Ibrahim</span>
+            <span className="text-sm text-gray-700">Hola, {usuario}</span>
             <img
-              src="https://ui-avatars.com/api/?name=Ibrahim"
+              src={`https://ui-avatars.com/api/?name=${usuario}`}
               alt="Avatar"
               className="w-8 h-8 rounded-full border"
             />
