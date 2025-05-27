@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
+// import { Trash2 } from 'lucide-react';
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 DataTable.use(DT);
@@ -13,10 +14,11 @@ export default function StudentsPage() {
   const [tableData, setTableData] = useState<Estudiante[][]>([]);
   const apiUrl = import.meta.env.VITE_APP_API_URL;
   const getData = async () => {
-
-    axios.get(`${apiUrl}estudiantes`)
+    axios
+      .get(`${apiUrl}estudiantes`)
       .then((response) => {
         const apiResponse = response.data;
+        console.log(apiResponse);
         if (
           apiResponse &&
           apiResponse.data &&
@@ -30,7 +32,7 @@ export default function StudentsPage() {
               user.correo,
               user.telefono,
               user.sede.nombre,
-              `${user.horario?.dia_semana} ${user.horario?.hora_inicio} - ${user.horario?.hora_fin}`,
+              `${user.horario?.dia_semana} ${user.horario?.hora_inicio} - ${user.horario?.hora_fin}`
             ])
           );
         } else {
@@ -49,7 +51,9 @@ export default function StudentsPage() {
 
   useEffect(() => {
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
@@ -57,12 +61,17 @@ export default function StudentsPage() {
         Listado de Estudiantes
       </h1>
 
-      <div className="overflow-x-auto bg-white shadow-xl rounded-lg p-1">
+      <div className="overflow-x-auto bg-white shadow-xl rounded-lg p-2">
         <DataTable
           data={tableData}
           className="min-w-full w-full display compact nowrap order-column"
           options={{
-            columnDefs: [{ targets: "_all", className: "dt-left" }],
+            columnDefs: [
+              {
+                targets: "_all",
+                className: "dt-left",
+              },
+            ],
             language: {
               search: "Buscar:",
               lengthMenu: "Mostrar _MENU_ registros por página",

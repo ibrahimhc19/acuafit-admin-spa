@@ -1,9 +1,9 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
-import { useSelector } from "react-redux";
-import { themeSettings } from "./theme.ts";
-import { RootState } from "./store.ts";
-import { useMemo } from "react";
+// import { CssBaseline, ThemeProvider } from "@mui/material";
+// import { createTheme } from "@mui/material/styles";
+// import { useSelector } from "react-redux";
+// import { themeSettings } from "./theme.ts";
+// import { RootState } from "./store.ts";
+// import { useMemo } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Students from "./pages/Students.tsx";
@@ -17,16 +17,16 @@ import Parents from "./pages/Parents.tsx";
 import Payments from "./pages/Payments.tsx";
 
 export default function App() {
-  const mode = useSelector((state: RootState) => state.global.mode);
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  // const mode = useSelector((state: RootState) => state.global.mode);
+  // const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
     <div className="app">
       <Router>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
+        {/* <ThemeProvider theme={theme}> */}
+          {/* <CssBaseline /> */}
           <Routes>
             <Route element={<DashboardLayout />}>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
               <Route path="/estudiantes" element={<Students />} />
               <Route path="/representantes" element={<Parents />} />
               <Route path="/sedes" element={<Locations />} />
@@ -38,7 +38,7 @@ export default function App() {
             <Route path="*" element={<NotFoundPage />} />
             <Route path="login" element={<Login />} />
           </Routes>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </Router>
     </div>
   );
