@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use App\Models\Estudiante;
+use Illuminate\Support\Facades\Storage;
 
 class Pago extends Model
 {

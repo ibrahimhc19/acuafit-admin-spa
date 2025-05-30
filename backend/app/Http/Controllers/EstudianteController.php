@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
 
 class EstudianteController extends Controller
 {
@@ -170,7 +169,7 @@ class EstudianteController extends Controller
         if($validator->fails()){
             return response()->json([
                 'message' => 'Errores de validación',
-                'errors' => $validator-errors()
+                'errors' => $validator->errors()
             ], 422);
         }
         $validatedData = $validator->validated();

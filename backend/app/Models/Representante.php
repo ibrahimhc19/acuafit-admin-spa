@@ -31,7 +31,7 @@ class Representante extends Model
     ];
 
     public function estudiantes(){
-        return this->hasMany(Estudiante::class, 'representante_id', 'id');
+        return $this->hasMany(Estudiante::class, 'representante_id', 'id');
     }
 
 }
