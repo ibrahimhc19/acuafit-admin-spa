@@ -76,7 +76,7 @@ class PagoController extends Controller
                 'data' => $pago
             ], 201);
         } catch (\Exception $e) {
-            Log::error('Error al registrar el pago: ' . $e->getMessage() . ' Stacktrace: ' . $e->getTraceAsString());
+            Log::error('Error al registrar el pago: ' . $e->getMessage() . ' StackTrace: ' . $e->getTraceAsString());
             return response()->json([
                 'message' => 'Hubo un error en el servidor al procesar la solicitud. Por favor, inténtalo más tarde.'
             ], 500);
@@ -121,7 +121,7 @@ class PagoController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'message' => 'Error de validación',
-                'errors' => $validator-errors()
+                'errors' => $validator->errors()
             ], 422);
         }
 

@@ -1,8 +1,12 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\LoginController;
-use App\Http\Controllers\EstudianteController;
+// use App\Http\Controllers\Api\LoginController;
+// use App\Http\Controllers\EstudianteController;
+// use App\Http\Controllers\PagoController;
+use App\Http\Controllers\SedeController;
+use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\RepresentanteController;
 
 // Sedes
 Route::post('/sede', [SedeController::class, 'store'])->middleware('auth:sanctum');

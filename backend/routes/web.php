@@ -16,8 +16,8 @@ Route::get('/', function () {
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/user', [LoginController::class, 'user'])->middleware('auth:sanctum');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
-Route::get('auth/redirect/google', [GoogleController::class, 'redirect']);
-Route::get('auth/callback/google', [GoogleController::class, 'callback']);
+Route::get('/auth/google/redirect', [GoogleController::class, 'redirect'])->name('auth.google.redirect');
+Route::get('/auth/google/callback', [GoogleController::class, 'callback'])->name('auth.google.callback');
 
 // Inscripciones y otros
 Route::get('/registrar', [EstudianteController::class, 'create'])->name('inscripciones.create');
