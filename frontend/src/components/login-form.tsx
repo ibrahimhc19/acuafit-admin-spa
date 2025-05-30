@@ -16,6 +16,13 @@ import { useState } from "react";
 import axios from "axios";
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
+import { AlertCircle } from "lucide-react"
+ 
+import {
+  Alert,
+  AlertDescription,
+  // AlertTitle,
+} from "@/components/ui/alert"
 
 interface IFormInput {
   email: string;
@@ -77,11 +84,6 @@ export function LoginForm({
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit(submit)}>
-              {apiError && (
-                <div className="bg-red-100 text-red-700 p-2 rounded-xl text-sm">
-                  {"Error al iniciar sesión, intente nuevamente."}
-                </div>
-              )}
               <div className="grid gap-y-3">
                 <div className="grid gap-6">
                   <div className="grid gap-3">
@@ -102,6 +104,15 @@ export function LoginForm({
                         {errors.email.message}
                       </p>
                     )}
+                    {apiError && (
+                <Alert variant="destructive" className="flex gap-0">
+                  <AlertCircle className="h-4 w-4" />
+                  {/* <AlertTitle>Error al iniciar sesión.</AlertTitle> */}
+                  <AlertDescription>
+                    Error al iniciar sesión. Intente nuevamente.
+                  </AlertDescription>
+                </Alert>
+              )}
                   </div>
                   <div className="grid gap-3">
                     <div className="flex items-center">
@@ -125,14 +136,15 @@ export function LoginForm({
                       aria-describedby="password-error"
                     />
                     {errors.password && (
-              <p id="password-error" className="text-red-600 text-sm mt-1">
-                {errors.password.message}
-              </p>
-            )}
+                      <p
+                        id="password-error"
+                        className="text-red-600 text-sm mt-1"
+                      >
+                        {errors.password.message}
+                      </p>
+                    )}
                   </div>
-                  <Button type="submit"
-                  disabled={isSubmitting}
-                  >
+                  <Button type="submit" disabled={isSubmitting}>
                     {isSubmitting ? "Iniciando sesión..." : "Iniciar Sesión"}
                   </Button>
                 </div>
@@ -164,7 +176,8 @@ export function LoginForm({
         </Card>
         <div className="text-muted *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
           Al hacer click en continuar aceptas nuestros{" "}
-          <a href="#">Terminos y condiciones de servicio</a><br /> y <a href="#">Política de privacidad</a>.
+          <a href="#">Terminos y condiciones de servicio</a>
+          <br /> y <a href="#">Política de privacidad</a>.
         </div>
       </div>
     </div>
