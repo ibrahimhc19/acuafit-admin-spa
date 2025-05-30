@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -5,6 +6,13 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
 
+import { AppSidebar } from "@/components/app-sidebar";
+import { Separator } from "@/components/ui/separator";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function DashboardLayout() {
@@ -74,107 +82,16 @@ export default function DashboardLayout() {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
-      <aside
-        className={`fixed inset-y-0 left-0 z-30 w-64 bg-[#352c6f] text-white transform transition-transform duration-300 lg:relative lg:translate-x-0 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="flex items-center justify-between px-4 py-4 border-b border-[#6e59f7]">
-          <span className="px-4 text-xl font-bold">Acuafit</span>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="text-white lg:hidden"
-          >
-            ✖
-          </button>
-        </div>
-
-        <nav className="p-4 space-y-2 text-sm">
-          <NavLink
-            to="/estudiantes"
-            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
-          >
-            Estudiantes
-          </NavLink>
-          <NavLink
-            to="/representantes"
-            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
-          >
-            Representantes
-          </NavLink>
-          <NavLink
-            to="/sedes"
-            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
-          >
-            Sedes
-          </NavLink>
-          <NavLink
-            to="/horarios"
-            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
-          >
-            Horarios
-          </NavLink>
-          <NavLink
-            to="/pagos"
-            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
-          >
-            Pagos
-          </NavLink>
-          <NavLink
-            to="/contabilidad"
-            className="block px-3 py-2 rounded hover:bg-[#6e59f7]"
-          >
-            Contabilidad
-          </NavLink>
-        </nav>
-
-        <div className="mt-auto p-4 border-t border-[#6e59f7]">
-          <button
-            className="w-full px-3 py-2 text-sm bg-[#6e59f7] hover:bg-[#4b3ca6] rounded"
-            onClick={handleLogout}
-          >
-            Cerrar Sesión
-          </button>
-          {apiError && (
-            <div className="w-full px-3 py-2 my-4 text-sm bg-[#6e59f7] rounded">
-              {"Error al cerrar sesión, intente nuevamente."}
-            </div>
-          )}
-        </div>
-      </aside>
-
-      {/* Overlay for mobile */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-50 lg:hidden"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* Main content */}
-      <div className="flex-1 flex flex-col">
-        {/* Top bar */}
-        <header className="flex items-center justify-between px-6 py-4 bg-white shadow">
-          <button
-            onClick={() => setIsOpen(true)}
-            className="text-[#352c6f] lg:hidden"
-          >
-            ☰
-          </button>
-          <div className="items-center space-x-4 contents">
-            <span className="text-sm text-gray-700">Hola, {usuario}</span>
-            <img
-              src={`https://ui-avatars.com/api/?name=${usuario}`}
-              alt="Avatar"
-              className="w-8 h-8 rounded-full border"
-            />
-          </div>
-        </header>
-        <main className="p-6 overflow-y-auto">
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
+            <SidebarTrigger className="-ml-1" />
+            <Separator orientation="vertical" className="mr-2 h-4" />
+          </header>
           <Outlet />
-        </main>
-      </div>
+        </SidebarInset>
+      </SidebarProvider>
     </div>
   );
 }

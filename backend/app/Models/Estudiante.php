@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Estudiante extends Model
 {
@@ -70,12 +71,28 @@ class Estudiante extends Model
         'observaciones',
     ];
 
+    public function setFechaInscripcionAttribute($value)
+    {
+        if ($value) {
+            try {
+
+                $this->attributes['fecha_inscripcion'] = Carbon::createFromFormat('d/m/Y', $value)->toDateString();
+            } catch (\Exception $e) {
+                $this->attributes['fecha_inscripcion'] = $value;
+                Log::warning("Falló la conversión de fecha en el mutador para la inscripción del estudiante: " . $value . ". Error: " . $e->getMessage());
+            }
+        } else {
+            $this->attributes['fecha_inscripcion'] = null;
+        }
+    }
+
     /**
      * Los atributos que deben ser casteados a tipos nativos.
      *
      * @var array<string, string>
      */
     protected $casts = [
+        'id' => 'integer',
         'fecha_inscripcion' => 'date',
         'autoriza_uso_imagen' => 'boolean',
         'acepta_reglamento' => 'boolean',
@@ -85,8 +102,7 @@ class Estudiante extends Model
         'horario_id' => 'integer',
     ];
 
-    // Aquí puedes definir relaciones con otros modelos si es necesario
-    // Por ejemplo, si tienes modelos Representante, Sede, Horario:
+
     public function representante()
     {
         return $this->belongsTo(Representante::class, 'representante_id');
@@ -100,5 +116,10 @@ class Estudiante extends Model
     public function horario()
     {
         return $this->belongsTo(Horario::class, 'horario_id');
+    }
+    public function pagos()
+    {
+        return $this->hasMany(Pago::class, 'estudiante_id', 'id');
+
     }
 }
