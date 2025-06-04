@@ -19,11 +19,12 @@ class Pago extends Model
     protected $keyType = 'int';
     public $timestamps=false;
     protected $fillable = [
-        "estudiante_id",
-        "monto",
-        "fecha_pago",
-        "metodo_pago",
-        "soporte_pago"
+        'facturacion_id',
+        'fecha_pago',
+        'monto',
+        'metodo_pago',
+        'numero_referencia_pago',
+        'soporte_pago'
     ];
 
     public function setFechaPagoAttribute($value)
@@ -60,5 +61,10 @@ class Pago extends Model
 
     public function estudiante(){
         return $this->belongsTo(Estudiante::class,"estudiante_id");
+    }
+
+    public function facturacion()
+    {
+        return $this->belongsTo(Facturacion::class);
     }
 }

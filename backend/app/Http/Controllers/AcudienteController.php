@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Representante;
+use App\Models\Acudiente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class RepresentanteController extends Controller
+class AcudienteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $representantes = Representante::with(['estudiantes' => function($query){
+        $acudientes = Acudiente::with(['estudiantes' => function($query){
             $query->select('id', 'nombres', 'apellidos', 'documento_identidad', 'telefono');
         }])->paginate(15);
-        return response()->json($representantes);
+        return response()->json($acudientes);
     }
 
     /**
@@ -66,13 +66,13 @@ class RepresentanteController extends Controller
         $dataForCreation = $validator->validated();
 
         try {
-            $representante = Representante::create($dataForCreation);
+            $acudiente = Acudiente::create($dataForCreation);
             return response()->json([
-                'message' => 'Representante registrado exitosamente.',
-                'data' => $representante
+                'message' => 'Acudiente registrado exitosamente.',
+                'data' => $acudiente
             ], 201);
         } catch (\Exception $e) {
-            Log::error('Error al registrar el representante: ' . $e->getMessage() . ' StackTrace: ' . $e->getTraceAsString());
+            Log::error('Error al registrar el acudiente: ' . $e->getMessage() . ' StackTrace: ' . $e->getTraceAsString());
             return response()->json([
                 'message' => 'Hubo un error en el servidor al procesar la solicitud. Por favor, inténtalo más tarde.'
             ], 500);
@@ -82,34 +82,34 @@ class RepresentanteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $representanteId)
+    public function show(string $acudienteId)
     {
         try {
-            $representante = Representante::with(['estudiantes' => function ($query) {
+            $acudiente = Acudiente::with(['estudiantes' => function ($query) {
                 $query->select('id', 'nombres', 'apellidos', 'documento_identidad', 'telefono');
-            }])->findOrFail($representanteId);
-            return response()->json($representante);
+            }])->findOrFail($acudienteId);
+            return response()->json($acudiente);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-            return response()->json(['message' => 'Representante no encontrado.'], 404);
+            return response()->json(['message' => 'Acudiente no encontrado.'], 404);
         }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $representanteId)
+    public function update(Request $request, string $acudienteId)
     {
         try {
-            $representante = Representante::findOrFail($representanteId);
+            $acudiente = Acudiente::findOrFail($acudienteId);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-            return response()->json(['message' => 'Representante no encontrado'], 404);
+            return response()->json(['message' => 'Acudiente no encontrado'], 404);
         }
 
          $validator = Validator::make($request->all(), [
             'nombres' => 'sometimes|required|string|max:100',
             'apellidos' => 'sometimes|required|string|max:100',
             'tipo_documento' => ['sometimes','required','string', Rule::in(['CC', 'TI', 'CE', 'Pasaporte'])],
-            'documento_identidad' => ['sometimes','required','string','max:50', Rule::unique('representantes', 'documento_identidad')->ignore($representante->id)],
+            'documento_identidad' => ['sometimes','required','string','max:50', Rule::unique('acudientes', 'documento_identidad')->ignore($acudiente->id)],
             'telefono' => 'sometimes|nullable|string|max:20',
             'email' => ['sometimes','nullable','string','email','max:100', Rule::unique('representantes', 'email')->ignore($representante->id)],
             'rut' => 'sometimes|nullable|string|max:100'
@@ -145,39 +145,39 @@ class RepresentanteController extends Controller
         $validatedData = $validator->validated();
 
         try {
-            $representante->update($validatedData);
-            $representante->refresh();
+            $acudiente->update($validatedData);
+            $acudiente->refresh();
             return response()->json([
-                'message' => 'Representante actualizado exitosamente',
-                'data' => $representante
+                'message' => 'Acudiente actualizado exitosamente',
+                'data' => $acudiente
             ], 200);
 
         } catch (\Exception $e) {
-            Log::error('Error al actualizar el representante: ' . $e->getMessage() . ' StackTrace: ' . $e->getTraceAsString());
-            return response()->json(['message'=> 'Hubo un error al actualizar el representante'],500);
+            Log::error('Error al actualizar el acudiente: ' . $e->getMessage() . ' StackTrace: ' . $e->getTraceAsString());
+            return response()->json(['message'=> 'Hubo un error al actualizar el acudiente'],500);
         }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $representanteId)
+    public function destroy(string $acudienteId)
     {
         try {
-            $representante = Representante::findOrFail($representanteId);
+            $acudiente = Acudiente::findOrFail($acudienteId);
         } catch (ModelNotFoundException $e) {
-            return response()->json(['message' => 'Representante no encontrado'], 404);
+            return response()->json(['message' => 'Acudiente no encontrado'], 404);
         }
 
         try {
-            $representante->delete();
+            $acudiente->delete();
             return response()->json([
-                'message' => 'Representante eliminado exitosamente'
+                'message' => 'Acudiente eliminado exitosamente'
             ], 200);
         } catch (\Exception $e) {
-            Log::error('Error al eliminar el representante: ' . $e->getMessage() . 'StackTrace: ' . $e->getTraceAsString());
+            Log::error('Error al eliminar el acudiente: ' . $e->getMessage() . 'StackTrace: ' . $e->getTraceAsString());
             return response()->json([
-                'message' => 'Hubo un error al eliminar el representante'
+                'message' => 'Hubo un error al eliminar el acudiente'
             ], 500);
         }
     }

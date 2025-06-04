@@ -104,9 +104,9 @@ class Estudiante extends Model
     ];
 
 
-    public function representante()
+    public function acudiente()
     {
-        return $this->belongsTo(Representante::class, 'representante_id');
+        return $this->belongsTo(Acudiente::class, 'representante_id');
     }
 
     public function sede()
