@@ -4,12 +4,11 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-// import DashboardLayout from "./layouts/DashboardLayout";
+
 import Layout from "./layouts/Layout";
-import Students from "./pages/Students.tsx";
-// import Login from "./pages/Login.tsx";
 import Locations from "./pages/Locations.tsx";
 import Accounting from "./pages/Accounting/Accounting.tsx";
+import Students from "./pages/Students/Students.tsx";
 import Schedules from "./pages/Schedules.tsx";
 import NotFoundPage from "./pages/NotFoundPage";
 import Home from "./pages/Home.tsx";
@@ -30,8 +29,9 @@ export default function App() {
             <Route path="/sedes" element={<Locations />} />
             <Route path="/horarios" element={<Schedules />} />
             <Route path="/pagos" element={<Payments />} />
-            <Route path="/contabilidad" element={<Accounting />} />
+            <Route path="/facturacion" element={<Accounting />} />
             <Route path="/dashboard" element={<Home />} />
+            <Route path="/tabla" element={<Students />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
           {/* <Route path="login" element={<Login />} /> */}

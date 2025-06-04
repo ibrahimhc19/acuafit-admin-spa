@@ -50,12 +50,12 @@ export function LoginForm({
 
       await axios.get(`${apiUrl}sanctum/csrf-cookie`, {});
 
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const response = await axios.post(`${apiUrl}login`, data, {
         headers: {
           Accept: "application/json",
         },
       });
-      console.log(response);
 
       navigate("/dashboard", { replace: true });
     } catch (error: unknown) {

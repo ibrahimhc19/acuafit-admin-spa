@@ -2,6 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 import { MoreHorizontal } from "lucide-react"
+import { ArrowUpDown } from "lucide-react"
  
 import { Button } from "@/components/ui/button"
 import {
@@ -36,7 +37,21 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "nombres",
-    header: "Nombres y apellidos",
+    // header: "Nombres y apellidos",
+    cell: ({ row }) => {
+      return `${row.getValue('nombres')} ${row.getValue('sede')}`;
+    },
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Nombres y apellidos
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
   },
   {
     accessorKey: "edad",
@@ -58,7 +73,8 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: "horario",
     header: "Horario",
   },
-  {    id: "actions",
+  { header: "Acciones",
+    id: "actions",
     cell: ({ row }) => {
       const payment = row.original
  
@@ -66,20 +82,20 @@ export const columns: ColumnDef<Payment>[] = [
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
+              <span className="sr-only">Abrir menú</span>
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuLabel>Acciones</DropdownMenuLabel>
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(payment.nombres.toString())}
             >
-              Copy payment ID
+              Ver estudiante
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>Editar estudiante</DropdownMenuItem>
+            <DropdownMenuItem>Eliminar estudiante</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )

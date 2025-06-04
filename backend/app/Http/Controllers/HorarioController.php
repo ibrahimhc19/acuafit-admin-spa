@@ -94,7 +94,7 @@ class HorarioController extends Controller
         $validator = Validator::make($request->all(), [
             'tipo_grupo' => ['sometimes','required', 'string', Rule::in(['Adultos', 'Niños'])],
             'sede_id' => 'sometimes|required|integer|exists:sedes,id',
-            'dia_semana' => ['required', 'string', Rule::in(['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'])],
+            'dia_semana' => ['sometimes','required', 'string', Rule::in(['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'])],
             'hora_inicio' => 'sometimes|required|date_format:H:i:s',
             'hora_fin' => 'sometimes|required|date_format:H:i:s|after:hora_inicio',
         ], [
