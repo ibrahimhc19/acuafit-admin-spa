@@ -5,8 +5,6 @@ import axios from 'axios'
 import { useEffect, useState } from "react";
 
 
-// export default async function DemoPage() {
-//   const data = await getData()
 
 export default function StudentsPage() {
 
@@ -72,16 +70,10 @@ useEffect(() => {
   return (
     <div className="container mx-auto sm:px-6 py-4 lg:px-8 min-h-[75vh]">
       <DataTable 
-      columns={columns} 
+      columns={columns(Number(indice))} 
       data={tableData}
-      // handlePreviousPage={handlePreviousPage}
-      // handleNextPage={handleNextPage}
-      // handleFirstPage={handleFirstPage}
-      // handleLastPage={handleLastPage}
-      // firstPage={firstPage}
       nextPage={nextPage}
       previousPage={previousPage}
-      // lastPage={lastPage}
       handlePageChange={handlePageChange}
       />
     </div>
