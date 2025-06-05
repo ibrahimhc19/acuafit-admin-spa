@@ -12,12 +12,12 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 
-export const columns: ColumnDef<Estudiante>[] = [
+export const columns = (indice: number): ColumnDef<Estudiante>[] => [
     {
     accessorKey: "id",
     header: "#",
-    cell: ({row}) => {
-      return row.index+1;
+    cell: () => {
+      return indice+1;
     }
   },
   {

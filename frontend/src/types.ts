@@ -54,12 +54,6 @@ export interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
   handlePageChange: (type: 'first' | 'previous' | 'next' | 'last') => void
-  // handlePreviousPage: () => void
-  // handleNextPage: () => void
-  // handleFirstPage: () => void
-  // handleLastPage: () => void
-  // firstPage: string | null
   nextPage: string | null
   previousPage: string | null
-  // lastPage: string | null
 }
