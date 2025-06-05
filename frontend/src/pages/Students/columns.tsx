@@ -17,7 +17,7 @@ export const columns = (indice: number): ColumnDef<Estudiante>[] => [
     accessorKey: "id",
     header: "#",
     cell: () => {
-      return indice+1;
+      return indice++;
     }
   },
   {
