@@ -1,0 +1,1142 @@
+{
+  "data": [
+    {
+      "id": 27,
+      "nombres": "Miguel Ángel",
+      "apellidos": "Torres Rojas",
+      "tipo_documento": "CC",
+      "edad": 28,
+      "documento_identidad": "1030405060",
+      "fecha_inscripcion": "2024-05-19",
+      "correo": "miguel.torres@email.com",
+      "direccion": "Avenida Las Palmas # 40-50",
+      "telefono": "3002223344",
+      "rut": "1030405060-8",
+      "autoriza_uso_imagen": 0,
+      "acepta_reglamento": 1,
+      "observaciones": "Ninguna.",
+      "representante": null,
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 30,
+      "nombres": "Gabriela",
+      "apellidos": "Ortiz Pinto",
+      "tipo_documento": "CC",
+      "edad": 27,
+      "documento_identidad": "1040506070",
+      "fecha_inscripcion": "2024-05-16",
+      "correo": "gabriela.ortiz@email.com",
+      "direccion": "Calle 3 Sur # 60-25",
+      "telefono": "3148889900",
+      "rut": "1040506070-7",
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": "Pago completo.",
+      "representante": null,
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 32,
+      "nombres": "Carlos",
+      "apellidos": "Mendoza",
+      "tipo_documento": "CC",
+      "edad": 18,
+      "documento_identidad": "100001",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "carlos.mendoza@example.com",
+      "direccion": "Calle 10 #5-20",
+      "telefono": "3120001001",
+      "rut": "123456789-0",
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 33,
+      "nombres": "Sofía",
+      "apellidos": "Ramírez",
+      "tipo_documento": "TI",
+      "edad": 12,
+      "documento_identidad": "100002",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "sofia.ramirez@example.com",
+      "direccion": "Cra 7 #12-45",
+      "telefono": "3110001002",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": "Alérgica al cloro",
+      "representante": {
+        "id": 2,
+        "nombres": "Lucía",
+        "apellidos": "Salazar",
+        "tipo_documento": "CC",
+        "documento_identidad": "2345678901",
+        "telefono": "3102345678",
+        "email": "lucia.salazar@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 34,
+      "nombres": "Juan",
+      "apellidos": "Torres",
+      "tipo_documento": "CC",
+      "edad": 25,
+      "documento_identidad": "100003",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "juan.torres@example.com",
+      "direccion": "Av 15 #8-30",
+      "telefono": "3100001003",
+      "rut": "987654321-0",
+      "autoriza_uso_imagen": 0,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 35,
+      "nombres": "Valentina",
+      "apellidos": "López",
+      "tipo_documento": "TI",
+      "edad": 10,
+      "documento_identidad": "100004",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "valentina.lopez@example.com",
+      "direccion": "Calle 20 #4-55",
+      "telefono": "3120001004",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 3,
+        "nombres": "Andrés",
+        "apellidos": "Quintero",
+        "tipo_documento": "CC",
+        "documento_identidad": "3456789012",
+        "telefono": "3103456789",
+        "email": "andres.quintero@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 4,
+        "nombre": "Sede Castilla",
+        "direccion": "Av. 1 #10-10"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 36,
+      "nombres": "Pedro",
+      "apellidos": "Rojas",
+      "tipo_documento": "CC",
+      "edad": 31,
+      "documento_identidad": "100005",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "pedro.rojas@example.com",
+      "direccion": "Cra 9 #14-50",
+      "telefono": "3130001005",
+      "rut": "543210987-6",
+      "autoriza_uso_imagen": 0,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 4,
+        "nombre": "Sede Castilla",
+        "direccion": "Av. 1 #10-10"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 37,
+      "nombres": "Laura",
+      "apellidos": "Gómez",
+      "tipo_documento": "TI",
+      "edad": 9,
+      "documento_identidad": "100006",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "laura.gomez@example.com",
+      "direccion": "Av 3 #7-21",
+      "telefono": "3140001006",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": "Tiene asma",
+      "representante": {
+        "id": 2,
+        "nombres": "Lucía",
+        "apellidos": "Salazar",
+        "tipo_documento": "CC",
+        "documento_identidad": "2345678901",
+        "telefono": "3102345678",
+        "email": "lucia.salazar@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 38,
+      "nombres": "Luis",
+      "apellidos": "Martínez",
+      "tipo_documento": "CC",
+      "edad": 20,
+      "documento_identidad": "100007",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "luis.martinez@example.com",
+      "direccion": "Calle 33 #6-10",
+      "telefono": "3150001007",
+      "rut": "222333444-5",
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 39,
+      "nombres": "Camila",
+      "apellidos": "Herrera",
+      "tipo_documento": "TI",
+      "edad": 11,
+      "documento_identidad": "100008",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "camila.herrera@example.com",
+      "direccion": "Cra 21 #15-78",
+      "telefono": "3160001008",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 4,
+        "nombres": "Carlos",
+        "apellidos": "Mendoza",
+        "tipo_documento": "CC",
+        "documento_identidad": "1234567890",
+        "telefono": "3101234567",
+        "email": "carlos.mendoza@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 40,
+      "nombres": "Diego",
+      "apellidos": "Castro",
+      "tipo_documento": "CC",
+      "edad": 29,
+      "documento_identidad": "100009",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "diego.castro@example.com",
+      "direccion": "Av 18 #22-60",
+      "telefono": "3170001009",
+      "rut": null,
+      "autoriza_uso_imagen": 0,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 4,
+        "nombre": "Sede Castilla",
+        "direccion": "Av. 1 #10-10"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 41,
+      "nombres": "Mariana",
+      "apellidos": "Díaz",
+      "tipo_documento": "TI",
+      "edad": 13,
+      "documento_identidad": "100010",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "mariana.diaz@example.com",
+      "direccion": "Calle 40 #9-40",
+      "telefono": "3180001010",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 3,
+        "nombres": "Andrés",
+        "apellidos": "Quintero",
+        "tipo_documento": "CC",
+        "documento_identidad": "3456789012",
+        "telefono": "3103456789",
+        "email": "andres.quintero@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 42,
+      "nombres": "Ana",
+      "apellidos": "Ruiz",
+      "tipo_documento": "TI",
+      "edad": 10,
+      "documento_identidad": "100011",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "ana.ruiz@example.com",
+      "direccion": "Calle 21 #11-10",
+      "telefono": "3123451111",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 2,
+        "nombres": "Lucía",
+        "apellidos": "Salazar",
+        "tipo_documento": "CC",
+        "documento_identidad": "2345678901",
+        "telefono": "3102345678",
+        "email": "lucia.salazar@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 43,
+      "nombres": "Samuel",
+      "apellidos": "Ortiz",
+      "tipo_documento": "CC",
+      "edad": 22,
+      "documento_identidad": "100012",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "samuel.ortiz@example.com",
+      "direccion": "Cra 19 #10-22",
+      "telefono": "3200001012",
+      "rut": "112233445-9",
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 4,
+        "nombre": "Sede Castilla",
+        "direccion": "Av. 1 #10-10"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 44,
+      "nombres": "Isabella",
+      "apellidos": "Mejía",
+      "tipo_documento": "TI",
+      "edad": 12,
+      "documento_identidad": "100013",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "isabella.mejia@example.com",
+      "direccion": "Calle 30 #7-35",
+      "telefono": "3130001013",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 4,
+        "nombres": "Carlos",
+        "apellidos": "Mendoza",
+        "tipo_documento": "CC",
+        "documento_identidad": "1234567890",
+        "telefono": "3101234567",
+        "email": "carlos.mendoza@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 45,
+      "nombres": "Julián",
+      "apellidos": "Pardo",
+      "tipo_documento": "CC",
+      "edad": 28,
+      "documento_identidad": "100014",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "julian.pardo@example.com",
+      "direccion": "Av 13 #5-60",
+      "telefono": "3190001014",
+      "rut": "445566778-0",
+      "autoriza_uso_imagen": 0,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 46,
+      "nombres": "Daniela",
+      "apellidos": "Salazar",
+      "tipo_documento": "TI",
+      "edad": 14,
+      "documento_identidad": "100015",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "daniela.salazar@example.com",
+      "direccion": "Cra 25 #15-17",
+      "telefono": "3210001015",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": "Primera vez en natación",
+      "representante": {
+        "id": 3,
+        "nombres": "Andrés",
+        "apellidos": "Quintero",
+        "tipo_documento": "CC",
+        "documento_identidad": "3456789012",
+        "telefono": "3103456789",
+        "email": "andres.quintero@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 47,
+      "nombres": "Emilio",
+      "apellidos": "Álvarez",
+      "tipo_documento": "CC",
+      "edad": 30,
+      "documento_identidad": "100016",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "emilio.alvarez@example.com",
+      "direccion": "Calle 18 #8-18",
+      "telefono": "3220001016",
+      "rut": "556677889-1",
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 4,
+        "nombre": "Sede Castilla",
+        "direccion": "Av. 1 #10-10"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 48,
+      "nombres": "Carla",
+      "apellidos": "Nieto",
+      "tipo_documento": "TI",
+      "edad": 11,
+      "documento_identidad": "100017",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "carla.nieto@example.com",
+      "direccion": "Cra 12 #9-09",
+      "telefono": "3230001017",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 2,
+        "nombres": "Lucía",
+        "apellidos": "Salazar",
+        "tipo_documento": "CC",
+        "documento_identidad": "2345678901",
+        "telefono": "3102345678",
+        "email": "lucia.salazar@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 49,
+      "nombres": "Mateo",
+      "apellidos": "León",
+      "tipo_documento": "CC",
+      "edad": 24,
+      "documento_identidad": "100018",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "mateo.leon@example.com",
+      "direccion": "Av 22 #14-28",
+      "telefono": "3240001018",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 4,
+        "nombre": "Sede Castilla",
+        "direccion": "Av. 1 #10-10"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 50,
+      "nombres": "Paula",
+      "apellidos": "Acosta",
+      "tipo_documento": "TI",
+      "edad": 13,
+      "documento_identidad": "100019",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "paula.acosta@example.com",
+      "direccion": "Calle 5 #3-12",
+      "telefono": "3250001019",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 3,
+        "nombres": "Andrés",
+        "apellidos": "Quintero",
+        "tipo_documento": "CC",
+        "documento_identidad": "3456789012",
+        "telefono": "3103456789",
+        "email": "andres.quintero@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 51,
+      "nombres": "Nicolás",
+      "apellidos": "Vega",
+      "tipo_documento": "CC",
+      "edad": 19,
+      "documento_identidad": "100020",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "nicolas.vega@example.com",
+      "direccion": "Cra 27 #20-20",
+      "telefono": "3260001020",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 52,
+      "nombres": "Luciana",
+      "apellidos": "Silva",
+      "tipo_documento": "TI",
+      "edad": 10,
+      "documento_identidad": "100021",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "luciana.silva@example.com",
+      "direccion": "Av 5 #4-03",
+      "telefono": "3270001021",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 3,
+        "nombres": "Andrés",
+        "apellidos": "Quintero",
+        "tipo_documento": "CC",
+        "documento_identidad": "3456789012",
+        "telefono": "3103456789",
+        "email": "andres.quintero@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 4,
+        "nombre": "Sede Castilla",
+        "direccion": "Av. 1 #10-10"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 53,
+      "nombres": "Tomás",
+      "apellidos": "Restrepo",
+      "tipo_documento": "CC",
+      "edad": 27,
+      "documento_identidad": "100022",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "tomas.restrepo@example.com",
+      "direccion": "Cra 16 #5-55",
+      "telefono": "3280001022",
+      "rut": "998877665-3",
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 54,
+      "nombres": "Renata",
+      "apellidos": "Cárdenas",
+      "tipo_documento": "TI",
+      "edad": 9,
+      "documento_identidad": "100023",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "renata.cardenas@example.com",
+      "direccion": "Calle 17 #9-11",
+      "telefono": "3290001023",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 2,
+        "nombres": "Lucía",
+        "apellidos": "Salazar",
+        "tipo_documento": "CC",
+        "documento_identidad": "2345678901",
+        "telefono": "3102345678",
+        "email": "lucia.salazar@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 55,
+      "nombres": "Santiago",
+      "apellidos": "Herrera",
+      "tipo_documento": "CC",
+      "edad": 23,
+      "documento_identidad": "100024",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "santiago.herrera@example.com",
+      "direccion": "Cra 30 #13-08",
+      "telefono": "3300001024",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 56,
+      "nombres": "Sara",
+      "apellidos": "Valencia",
+      "tipo_documento": "TI",
+      "edad": 13,
+      "documento_identidad": "100025",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "sara.valencia@example.com",
+      "direccion": "Av 6 #2-20",
+      "telefono": "3310001025",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 4,
+        "nombres": "Carlos",
+        "apellidos": "Mendoza",
+        "tipo_documento": "CC",
+        "documento_identidad": "1234567890",
+        "telefono": "3101234567",
+        "email": "carlos.mendoza@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 57,
+      "nombres": "Esteban",
+      "apellidos": "Quintero",
+      "tipo_documento": "CC",
+      "edad": 32,
+      "documento_identidad": "100026",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "esteban.quintero@example.com",
+      "direccion": "Calle 25 #17-07",
+      "telefono": "3320001026",
+      "rut": "776655443-2",
+      "autoriza_uso_imagen": 0,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 58,
+      "nombres": "Valery",
+      "apellidos": "Ayala",
+      "tipo_documento": "TI",
+      "edad": 11,
+      "documento_identidad": "100027",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "valery.ayala@example.com",
+      "direccion": "Cra 11 #18-18",
+      "telefono": "3330001027",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 4,
+        "nombres": "Carlos",
+        "apellidos": "Mendoza",
+        "tipo_documento": "CC",
+        "documento_identidad": "1234567890",
+        "telefono": "3101234567",
+        "email": "carlos.mendoza@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 4,
+        "nombre": "Sede Castilla",
+        "direccion": "Av. 1 #10-10"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 59,
+      "nombres": "Jorge",
+      "apellidos": "Barrera",
+      "tipo_documento": "CC",
+      "edad": 29,
+      "documento_identidad": "100028",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "jorge.barrera@example.com",
+      "direccion": "Av 10 #1-19",
+      "telefono": "3340001028",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 2,
+        "nombre": "Sede Sur",
+        "direccion": "Av. 2 #20-20"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 60,
+      "nombres": "Emma",
+      "apellidos": "Zamora",
+      "tipo_documento": "TI",
+      "edad": 12,
+      "documento_identidad": "100029",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "emma.zamora@example.com",
+      "direccion": "Calle 7 #6-61",
+      "telefono": "3350001029",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": {
+        "id": 3,
+        "nombres": "Andrés",
+        "apellidos": "Quintero",
+        "tipo_documento": "CC",
+        "documento_identidad": "3456789012",
+        "telefono": "3103456789",
+        "email": "andres.quintero@example.com",
+        "rut": null
+      },
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 3,
+        "tipo_grupo": "Adultos",
+        "dia_semana": "Viernes",
+        "hora_inicio": "18:00:00",
+        "hora_fin": "20:00:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    },
+    {
+      "id": 61,
+      "nombres": "David",
+      "apellidos": "Ibarra",
+      "tipo_documento": "CC",
+      "edad": 21,
+      "documento_identidad": "100030",
+      "fecha_inscripcion": "2025-05-30",
+      "correo": "david.ibarra@example.com",
+      "direccion": "Cra 14 #3-14",
+      "telefono": "3360001030",
+      "rut": null,
+      "autoriza_uso_imagen": 1,
+      "acepta_reglamento": 1,
+      "observaciones": null,
+      "representante": null,
+      "sede": {
+        "id": 3,
+        "nombre": "Sede Centro",
+        "direccion": "Av. 3 #30-30"
+      },
+      "horario": {
+        "id": 4,
+        "tipo_grupo": "Niños",
+        "dia_semana": "Miércoles",
+        "hora_inicio": "14:00:00",
+        "hora_fin": "15:30:00"
+      },
+      "facturaciones": [],
+      "pagos": []
+    }
+  ],  
+    "first": "http://127.0.0.1:8000/api/estudiantes?page=1",
+    "last": "http://127.0.0.1:8000/api/estudiantes?page=1",
+    "prev": null,
+    "next": null,
+    "current_page": 1,
+    "from": 1,
+    "to": 32,
+    "last_page": 1,
+    "path": "http://127.0.0.1:8000/api/estudiantes",
+    "per_page": 35,
+    "total": 32
+}
