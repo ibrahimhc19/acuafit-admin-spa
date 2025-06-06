@@ -13,24 +13,47 @@ export default function StudentsPage() {
   const [previousPage, setPreviousPage] = useState('');
   const [lastPage, setLastPage] = useState('');
   const [nextPage, setNextPage] = useState('');
+  // const [url, setUrl] = useState(
+  //   `${import.meta.env.VITE_APP_API_URL}estudiantes`
+  // );
   const [url, setUrl] = useState(
-    `${import.meta.env.VITE_APP_API_URL}estudiantes`
+    'https://web-production-3bb6c.up.railway.app/api/estudiantes'
   );
   const [indice, setIndice] = useState(1);
 
+//   const handlePageChange = (type: 'first' | 'previous' | 'next' | 'last') => {
+//   switch (type) {
+//     case 'first':
+//       setUrl(firstPage);
+//       break;
+//     case 'previous':
+//       setUrl(previousPage);
+//       break;
+//     case 'next':
+//       setUrl(nextPage);
+//       break;
+//     case 'last':
+//       setUrl(lastPage);
+//       break;
+//   }
+// };
+
+const func = (page:string) =>{
+  return `https:${page.split(":")[1]}`
+}
   const handlePageChange = (type: 'first' | 'previous' | 'next' | 'last') => {
   switch (type) {
     case 'first':
-      setUrl(firstPage);
+      setUrl(func(firstPage));
       break;
     case 'previous':
-      setUrl(previousPage);
+      setUrl(func(previousPage));
       break;
     case 'next':
-      setUrl(nextPage);
+      setUrl(func(nextPage));
       break;
     case 'last':
-      setUrl(lastPage);
+      setUrl(func(lastPage));
       break;
   }
 };
@@ -39,7 +62,8 @@ export default function StudentsPage() {
 useEffect(() => {
      axios
       // .get(url)
-      .get("/mock/data.json")
+      // .get("/mock/data.json")
+      .get(url)
       .then((response) => {
         const apiResponse = response.data;
         if (
